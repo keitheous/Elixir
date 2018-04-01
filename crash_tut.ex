@@ -83,5 +83,18 @@ defmodule M do
     IO.puts "5 / 4 = #{5/4}" # returns a float
     IO.puts "5 div 4 is #{div(5,4)}" # division
     IO.puts "5 rem 4 is #{rem(5,4)}" # remainder
+    # these are basic maths - plenty of other functions such as e^, sine, cosine
+  end
+
+  def main_5 do
+    do_comparision()
+  end
+
+  def do_comparision do
+    IO.puts "comparing integer 4 == float 4.0 gives us #{4 == 4.0}"
+    # comparing value dont care about the data type
+    IO.puts "comparing integer 4 === float 4.0 gives us #{4 === 4.0}"
+    # comparing value AND comparing the data type
+    IO.puts "!= is used for NOT equal. can use like this (!=) and like this (!==)"
   end
 end
