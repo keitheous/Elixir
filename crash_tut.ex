@@ -151,4 +151,12 @@ defmodule M do
     IO.puts "ternary"
     IO.puts "#{if current_age > 18, do: "Can Vote", else: "Cannot Vote"}"
   end
+
+  def main_6 do
+    do_touples()
+  end
+
+  def do_touples do
+    # have a break. have a kit kat
+  end
 end
