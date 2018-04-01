@@ -88,6 +88,8 @@ defmodule M do
 
   def main_5 do
     do_comparision()
+    do_logical_expressions() # using and and or
+    do_conditions()
   end
 
   def do_comparision do
@@ -96,5 +98,57 @@ defmodule M do
     IO.puts "comparing integer 4 === float 4.0 gives us #{4 === 4.0}"
     # comparing value AND comparing the data type
     IO.puts "!= is used for NOT equal. can use like this (!=) and like this (!==)"
+
+    IO.puts "5 > 4 : #{5 > 4}"
+    IO.puts "5 >= 4 : #{ 5 >= 4}"
+    IO.puts "5 >= 5 : #{ 5 >= 5}"
+
+    IO.puts "5 < 4 : #{5 < 4}"
+    IO.puts "5 <= 4 : #{5 <= 4}"
+  end
+
+  def do_logical_expressions do
+    age = 16 # &&, || and ! are respectively and, or and not
+
+    IO.puts "Vote and Drive ? => #{ (age >=16) and (age >=18)}"
+    IO.puts "Vote or Drive ? => #{ (age >=16) or (age >=18)}"
+
+    IO.puts not true
+  end
+
+  def do_conditions do
+    current_age = 16
+
+    IO.puts "if/else"
+    if current_age >= 18 do
+      IO.puts "Can Vote!"
+    else
+      IO.puts "Cannot Vote!"
+    end
+
+    IO.puts "unless"
+    unless current_age  === 18 do
+      IO.puts "You are not 18, hence CANNOT Vote!"
+    else
+      IO.puts "You ARE 18, Please vote!"
+    end
+
+    IO.puts "condition"
+    cond do
+      current_age >= 18 -> IO.puts "you can vote"
+      current_age >= 16 -> IO.puts "you can drive"
+      current_age >= 14 -> IO.puts "you can waaait!"
+      true -> IO.puts "Default"
+    end
+
+    IO.puts "case"
+    case 2 do
+      1 -> IO.puts "Entered 1"
+      2 -> IO.puts "Entered 2"
+      _ -> IO.puts "Default"
+    end
+
+    IO.puts "ternary"
+    IO.puts "#{if current_age > 18, do: "Can Vote", else: "Cannot Vote"}"
   end
 end
