@@ -1,10 +1,11 @@
+# iex
+# iex(1)> c("crash_tut.ex")
 defmodule M do
   def main do
     name = IO.gets("What is your name? ") |> String.trim
     IO.puts "Hello #{name}"
   end
-  # iex
-  # iex(1)> c("crash_tut.ex")
+
   # [M]
   # iex(2)> M.main
   # What is your name? Keithie
@@ -21,7 +22,7 @@ defmodule M do
     my_ranges = 1..10
     IO.puts "my_int is Integer? #{is_integer(my_int)}"
     IO.puts "my_float is Float? #{is_float(my_float)}"
-    IO.puts "my_range defines a range between 1 to 10"
+    IO.puts "my_range defines a range between #{my_ranges}"
 
     IO.puts "this is an atom? #{is_atom(:Pittsburgh)}"
     IO.puts "Atom with spaces #{is_atom(:"New York")}"
@@ -54,5 +55,33 @@ defmodule M do
     IO.puts "check if a strong contains another string"
     IO.puts "Does longer_str contain my_str? #{String.contains?(longer_str, my_str)}"
     IO.puts "Does longer_str contain the word 'now'? #{String.contains?(longer_str, "now")}"
+    IO.puts "Does longer_str contain an exclamation mark '!'? #{String.contains?(longer_str, "!")} <<-- Hello no!"
+
+    IO.puts "First Alphabet of my_str is #{String.first(my_str)}"
+    IO.puts "Index 4 of my_str is #{String.at(my_str, 4)}"
+    IO.puts "Part of my_str is #{String.slice(my_str, 0, 2)}"
+
+    IO.puts "Inspecting splitted longer_str #{String.split(longer_str, " ")}"
+    IO.puts "Reversing longer_str gives us #{String.reverse(longer_str)}"
+    IO.puts "Upcase longer_str gives us #{String.upcase(longer_str)}"
+    IO.puts "Downcase longer_str gives us #{String.downcase(longer_str)}"
+    IO.puts "Capitalize longer_str gives us #{String.capitalize(longer_str)}"
+
+    # pipe a value from one thing to another
+    4 * 10 |> IO.puts
+    'a new strrring' |> IO.puts
+  end
+
+  def main_4 do
+    do_maths()
+  end
+
+  def do_maths do
+    IO.puts "5 + 4 = #{5+4}"
+    IO.puts "5 * 4 = #{5*4}"
+    IO.puts "5 - 4 = #{5-4}"
+    IO.puts "5 / 4 = #{5/4}" # returns a float
+    IO.puts "5 div 4 is #{div(5,4)}" # division
+    IO.puts "5 rem 4 is #{rem(5,4)}" # remainder
   end
 end
